@@ -62,13 +62,22 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""61a67134-1b75-4f6b-93f1-19b5eeea4c07"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""WASD"",
                     ""id"": ""9f6344eb-879c-4971-97e4-989e1e8a4c87"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -196,6 +205,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Pickup/Press"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91192c3d-374e-459b-8f62-f0f82d0c06b0"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +256,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_Look = m_PlayerActions.FindAction("Look", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
         m_PlayerActions_PickupPress = m_PlayerActions.FindAction("Pickup/Press", throwIfNotFound: true);
+        m_PlayerActions_Newaction = m_PlayerActions.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +322,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Look;
     private readonly InputAction m_PlayerActions_Interact;
     private readonly InputAction m_PlayerActions_PickupPress;
+    private readonly InputAction m_PlayerActions_Newaction;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -309,6 +331,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_PlayerActions_Look;
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
         public InputAction @PickupPress => m_Wrapper.m_PlayerActions_PickupPress;
+        public InputAction @Newaction => m_Wrapper.m_PlayerActions_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +353,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PickupPress.started += instance.OnPickupPress;
             @PickupPress.performed += instance.OnPickupPress;
             @PickupPress.canceled += instance.OnPickupPress;
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -346,6 +372,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PickupPress.started -= instance.OnPickupPress;
             @PickupPress.performed -= instance.OnPickupPress;
             @PickupPress.canceled -= instance.OnPickupPress;
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -387,5 +416,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPickupPress(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
