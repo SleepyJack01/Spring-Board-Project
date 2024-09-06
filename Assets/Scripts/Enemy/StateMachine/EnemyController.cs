@@ -176,4 +176,9 @@ public class EnemyController : MonoBehaviour
         //animator.SetFloat("zMovement", zMovement);
     }
 
+    public void EnterAlertState()
+    {
+        ChangeState(new AlertState(this));
+    }
+
 }
