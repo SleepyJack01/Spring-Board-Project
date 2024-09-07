@@ -8,6 +8,18 @@ public class Inventory : MonoBehaviour
     public List<Evidence> evidenceInventory = new List<Evidence>();
     [SerializeField] private int maxInventorySize = 3;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     public bool AddEvidence(Evidence evidence)
     {
         if (evidenceInventory.Count < maxInventorySize)
