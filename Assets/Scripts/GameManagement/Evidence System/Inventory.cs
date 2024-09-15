@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public List<Evidence> evidenceInventory = new List<Evidence>();
     [SerializeField] private int maxInventorySize = 3;
+    [SerializeField] private TMPro.TextMeshProUGUI evidenceCountText;
 
     private void Awake()
     {
@@ -18,6 +19,8 @@ public class Inventory : MonoBehaviour
         {
             Destroy(this);
         }
+
+        evidenceCountText.text = evidenceInventory.Count.ToString() + "/" + maxInventorySize.ToString();
     }
 
     public bool AddEvidence(Evidence evidence)
@@ -26,6 +29,7 @@ public class Inventory : MonoBehaviour
         {
             evidenceInventory.Add(evidence);
             evidence.Collect();
+            evidenceCountText.text = evidenceInventory.Count.ToString() + "/" + maxInventorySize.ToString();
             return true;
         }
         else
@@ -38,5 +42,6 @@ public class Inventory : MonoBehaviour
     public void RemoveEvidence(Evidence evidence)
     {
         evidenceInventory.Remove(evidence);
+        evidenceCountText.text = evidenceInventory.Count.ToString() + "/" + maxInventorySize.ToString();
     }
 }

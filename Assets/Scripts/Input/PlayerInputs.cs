@@ -55,15 +55,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pickup/Press"",
-                    ""type"": ""Button"",
-                    ""id"": ""7a4ca3c4-dcc1-434f-9e95-37f380363154"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Menu Button"",
                     ""type"": ""Button"",
                     ""id"": ""61a67134-1b75-4f6b-93f1-19b5eeea4c07"",
@@ -176,33 +167,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8e6f234f-e633-4d78-9bd5-0131b8343e4e"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e37eb23e-9d0b-47b6-bb14-3109e8ffd7ec"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard Mouse"",
-                    ""action"": ""Pickup/Press"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eff0bef5-2766-49d5-bd61-d7ba5b23b75d"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Pickup/Press"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -266,7 +235,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_Movement = m_PlayerActions.FindAction("Movement", throwIfNotFound: true);
         m_PlayerActions_Look = m_PlayerActions.FindAction("Look", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
-        m_PlayerActions_PickupPress = m_PlayerActions.FindAction("Pickup/Press", throwIfNotFound: true);
         m_PlayerActions_MenuButton = m_PlayerActions.FindAction("Menu Button", throwIfNotFound: true);
     }
 
@@ -332,7 +300,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Movement;
     private readonly InputAction m_PlayerActions_Look;
     private readonly InputAction m_PlayerActions_Interact;
-    private readonly InputAction m_PlayerActions_PickupPress;
     private readonly InputAction m_PlayerActions_MenuButton;
     public struct PlayerActionsActions
     {
@@ -341,7 +308,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerActions_Movement;
         public InputAction @Look => m_Wrapper.m_PlayerActions_Look;
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
-        public InputAction @PickupPress => m_Wrapper.m_PlayerActions_PickupPress;
         public InputAction @MenuButton => m_Wrapper.m_PlayerActions_MenuButton;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
@@ -361,9 +327,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @PickupPress.started += instance.OnPickupPress;
-            @PickupPress.performed += instance.OnPickupPress;
-            @PickupPress.canceled += instance.OnPickupPress;
             @MenuButton.started += instance.OnMenuButton;
             @MenuButton.performed += instance.OnMenuButton;
             @MenuButton.canceled += instance.OnMenuButton;
@@ -380,9 +343,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @PickupPress.started -= instance.OnPickupPress;
-            @PickupPress.performed -= instance.OnPickupPress;
-            @PickupPress.canceled -= instance.OnPickupPress;
             @MenuButton.started -= instance.OnMenuButton;
             @MenuButton.performed -= instance.OnMenuButton;
             @MenuButton.canceled -= instance.OnMenuButton;
@@ -426,7 +386,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnPickupPress(InputAction.CallbackContext context);
         void OnMenuButton(InputAction.CallbackContext context);
     }
 }

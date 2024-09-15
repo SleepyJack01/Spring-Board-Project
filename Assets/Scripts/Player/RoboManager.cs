@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RoboManager : MonoBehaviour
 {
@@ -30,8 +29,4 @@ public class RoboManager : MonoBehaviour
 
         batteryBar.SetBattery(currentBattery);
     }
-
-
-    
-    
 }

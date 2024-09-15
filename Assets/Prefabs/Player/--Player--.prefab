@@ -69,7 +69,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -9775,7 +9775,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1311
+  m_VersionIndex: 1335
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10051,13 +10051,21 @@ MonoBehaviour:
     m_ActionId: 66fee9c7-d206-45d6-8a8f-221afbff5edb
     m_ActionName: CharacterControls/Look[/Mouse/delta,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3548200020334685386}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cf639645-58db-4c93-8991-9d5c35247e04
     m_ActionName: CharacterControls/Interact[/Keyboard/e,/XInputControllerWindows/buttonNorth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7a4ca3c4-dcc1-434f-9e95-37f380363154
-    m_ActionName: CharacterControls/Pickup/Press[/Mouse/leftButton,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -10091,8 +10099,9 @@ GameObject:
   - component: {fileID: 2405105588616196331}
   - component: {fileID: 417454043794022000}
   - component: {fileID: 5895346407872654233}
-  - component: {fileID: 2050534031267077350}
   - component: {fileID: 528890307863875262}
+  - component: {fileID: 1786622117723950970}
+  - component: {fileID: 3548200020334685386}
   m_Layer: 6
   m_Name: RoboDog
   m_TagString: Player
@@ -10155,15 +10164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f1cabb56fbbae4ab4fc14de5104df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 1498844157105078608}
+  headTransform: {fileID: 1498844157105078608}
+  cameraTransform: {fileID: 34370612382139001}
   movementSpeed: 5
   movementLerpSpeed: 6
   rotationFactorPerFrame: 100
   enableHeadbob: 1
-  headbobFrequency: 1.5
-  headbobSwayAngle: 0.5
-  headbobHeight: 0.3
-  headbobSideMovement: 0.05
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -10190,18 +10196,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2050534031267077350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4242081932376786312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558ce7ee8a74514429a9d1ad28cc1128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &528890307863875262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10216,6 +10210,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evidenceInventory: []
   maxInventorySize: 3
+  evidenceCountText: {fileID: 0}
+--- !u!114 &1786622117723950970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242081932376786312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cd4f33478feee44a6b5dca2b84b679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batteryBar: {fileID: 0}
+  maxBattery: 100
+  currentBattery: 0
+  batteryDecreaseRate: 0.1
+--- !u!114 &3548200020334685386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242081932376786312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b77eff8a29b68e4289dbe50469ca97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roboCamera: {fileID: 4769256413938332924}
+  interactionDistance: 2
 --- !u!1 &7811794845297187320
 GameObject:
   m_ObjectHideFlags: 0
@@ -10322,7 +10347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -10332,7 +10357,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
