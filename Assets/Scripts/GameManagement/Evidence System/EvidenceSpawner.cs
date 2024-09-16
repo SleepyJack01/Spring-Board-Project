@@ -3,7 +3,6 @@ using UnityEngine;
 
 public static class ListExtensions
 {
-    // Fisher-Yates Shuffle for randomizing the list in place
     public static void Shuffle<T>(this IList<T> list)
     {
         int n = list.Count;
@@ -82,12 +81,12 @@ public class EvidenceSpawner : MonoBehaviour
         shuffledSpawnPoints.Shuffle();
 
         int totalSpawnedPoints = 0;
-        bool hasNegativeOrZero = false;  // Track if we've spawned any negative or zero-point evidence
+        bool hasNegativeOrZero = false;
 
         // Randomly select evidence for each spawn point (use exactly one spawn point for each piece of evidence)
         for (int i = 0; i < shuffledSpawnPoints.Count; i++)
         {
-            Transform spawnPoint = shuffledSpawnPoints[i];  // Get the next available spawn point
+            Transform spawnPoint = shuffledSpawnPoints[i];
             EvidenceData randomEvidence = availableEvidence[Random.Range(0, availableEvidence.Count)];
 
             // Properly account for negative points
@@ -100,19 +99,19 @@ public class EvidenceSpawner : MonoBehaviour
 
             // Instantiate the evidence at the current spawn point and track it
             GameObject evidenceInstance = InstantiateEvidence(randomEvidence, spawnPoint);
-            spawnedEvidence.Add(evidenceInstance);  // Track the instantiated evidence for cleanup
+            spawnedEvidence.Add(evidenceInstance);
         }
 
         // Check if the total spawned points are within the desired range (min to max)
         Debug.Log($"Total Spawned Points: {totalSpawnedPoints}");
         if (totalSpawnedPoints >= totalPointsToSpawn && totalSpawnedPoints <= maxPointsToSpawn && hasNegativeOrZero)
         {
-            return true;  // Success: Points are within range, and we have at least one negative or zero-point evidence
+            return true;
         }
         else
         {
             Debug.LogWarning("Points are out of the desired range or no negative/zero evidence. Retrying...");
-            return false;  // Retry: points out of range or no negative/zero-point evidence
+            return false;
         }
     }
 
@@ -120,21 +119,19 @@ public class EvidenceSpawner : MonoBehaviour
     private GameObject InstantiateEvidence(EvidenceData evidence, Transform spawnPoint)
     {
         GameObject evidenceInstance = Instantiate(evidence.evidencePrefab, spawnPoint.position, spawnPoint.rotation);
-        Debug.Log($"Spawned {evidence.evidenceName} at {spawnPoint.position} with {evidence.evidencePoints} points.");
-        return evidenceInstance;  // Return the instantiated object for tracking
+        return evidenceInstance;
     }
 
     // Method to clean up previously spawned evidence
     private void CleanupSpawnedEvidence()
     {
-        Debug.Log("Cleaning up previously spawned evidence...");
         foreach (GameObject evidence in spawnedEvidence)
         {
             if (evidence != null)
             {
-                Destroy(evidence);  // Destroy each previously spawned evidence object
+                Destroy(evidence);
             }
         }
-        spawnedEvidence.Clear();  // Clear the list after cleaning up
+        spawnedEvidence.Clear();
     }
 }
