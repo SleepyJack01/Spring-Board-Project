@@ -23,7 +23,8 @@ public class EvidenceSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField] List<EvidenceData> availableEvidence;
     [SerializeField] List<Transform> spawnPoints;
-    [SerializeField] int totalPointsToWin = 10;
+    [SerializeField] int numEvidenceToSpawn = 4;
+    [SerializeField] int totalPointsToWin = 6;
     [SerializeField] float extraPointFactor = 1.2f;
     [SerializeField] float maxPointFactor = 1.6f;
     [SerializeField] private int maxSpawnAttempts = 40;
@@ -80,13 +81,23 @@ public class EvidenceSpawner : MonoBehaviour
         List<Transform> shuffledSpawnPoints = new List<Transform>(spawnPoints);
         shuffledSpawnPoints.Shuffle();
 
+        // Check the range to ensure we're not exceeding the available spawn points
+        if (numEvidenceToSpawn > shuffledSpawnPoints.Count)
+        {
+            Debug.LogError("numEvidenceToSpawn exceeds shuffled spawn points. Adjusting automatically.");
+            numEvidenceToSpawn = shuffledSpawnPoints.Count;
+        }
+
+        // Select only the number of spawn points required based on numObjectsToSpawn
+        List<Transform> selectedSpawnPoints = shuffledSpawnPoints.GetRange(0, numEvidenceToSpawn);
+
         int totalSpawnedPoints = 0;
         bool hasNegativeOrZero = false;
 
-        // Randomly select evidence for each spawn point (use exactly one spawn point for each piece of evidence)
-        for (int i = 0; i < shuffledSpawnPoints.Count; i++)
+        // Loop through selected spawn points, not shuffledSpawnPoints
+        for (int i = 0; i < selectedSpawnPoints.Count; i++)
         {
-            Transform spawnPoint = shuffledSpawnPoints[i];
+            Transform spawnPoint = selectedSpawnPoints[i];
             EvidenceData randomEvidence = availableEvidence[Random.Range(0, availableEvidence.Count)];
 
             // Properly account for negative points
