@@ -53,7 +53,6 @@ public class RoboManager : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
-        anim.SetTrigger("FadeOut");
         playerMovement.enabled = false;
         controller.enabled = false;
 
