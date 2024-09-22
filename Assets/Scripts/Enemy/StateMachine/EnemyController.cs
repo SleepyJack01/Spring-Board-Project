@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 {
     [Header("State Controls")]
     public EnemyState currentState;
-    //public Animator animator;
+    public Animator animator;
 
     [Header("Movement Varibles")]
     public float walkSpeed = 3.5f;
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         enemyVision = GetComponent<EnemyVision>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         ChangeState(new PatrolState(this));
@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
         }
 
         UpdateTarget();
-        //SetAnimatorSpeed();
+        SetAnimatorSpeed();
     }
 
     public void SetSpeed(float speed)
@@ -172,8 +172,8 @@ public class EnemyController : MonoBehaviour
         xMovement = localVelocity.x;
         zMovement = localVelocity.z;
 
-        //animator.SetFloat("xMovement", xMovement);
-        //animator.SetFloat("zMovement", zMovement);
+        animator.SetFloat("xMovement", xMovement);
+        animator.SetFloat("zMovement", zMovement);
     }
 
     public void EnterAlertState()

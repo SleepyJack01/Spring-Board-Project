@@ -58,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
         HandleMovement();
         HandleRotation();
 
-        Debug.Log(isGrounded);
-
     }
 
     private void LateUpdate() 
