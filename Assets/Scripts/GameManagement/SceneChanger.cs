@@ -14,7 +14,7 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(SceneChangeSequence("Game Over"));
     }
 
-    public void Vitory()
+    public void Victory()
     {
         StartCoroutine(SceneChangeSequence("Victory"));
     }
@@ -22,7 +22,7 @@ public class SceneChanger : MonoBehaviour
     private IEnumerator SceneChangeSequence(string sceneName)
     {
         UIAnimator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneName);
     }
 }

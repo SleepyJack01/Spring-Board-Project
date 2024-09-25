@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RoboManager : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private SceneChanger sceneChanger;
+
     [Header("Trigger Settings")]
     [SerializeField] private CharacterController controller;
     [SerializeField] private PlayerMovement playerMovement;
@@ -31,6 +34,11 @@ public class RoboManager : MonoBehaviour
     {
         currentBattery -= batteryDecreaseRate * Time.deltaTime;
         batteryBar.SetBattery(currentBattery);
+
+        if (currentBattery <= 0)
+        {
+            sceneChanger.GameOver();
+        }
     }
 
     public void RobotHit(float damage)
@@ -42,7 +50,6 @@ public class RoboManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        //triggers for certain collisons in the game world
         switch (other.tag)
         {
             case "VanEnter":

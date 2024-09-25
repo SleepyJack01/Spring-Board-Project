@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EvidenceDropOff : MonoBehaviour
 {
+    [SerializeField] SceneChanger sceneChanger;
     public Inventory inventory;
     [SerializeField] private int pointsToWin = 10;
     private int totalPoints = 0;
@@ -59,7 +60,8 @@ public class EvidenceDropOff : MonoBehaviour
         Debug.Log("Total points: " + totalPoints);
         if (totalPoints >= pointsToWin)
         {
-            scoreText.text = "You Win!";
+            scoreText.text = "You have won!";
+            sceneChanger.Victory();
         }
         else
         {
