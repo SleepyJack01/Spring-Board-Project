@@ -26,7 +26,6 @@ public class RoboManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
 
         currentBattery = maxBattery;
-        batteryBar.SetMaxBattery(maxBattery);
         batteryBar.SetBattery(currentBattery);
     }
 
