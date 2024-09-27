@@ -21565,6 +21565,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe3c449ba21ecc49bdce006a5e898b0, type: 3}
+--- !u!1001 &463301049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_Name
+      value: Toilet sign (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.121
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.132
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
 --- !u!43 &467048729
 Mesh:
   m_ObjectHideFlags: 0
@@ -59251,6 +59320,75 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1578864938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_Name
+      value: Toilet sign (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1442.8837
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96a75ebfd11867e4ba6a4cb565f72404, type: 3}
 --- !u!1001 &1585654234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83986,6 +84124,8 @@ SceneRoots:
   - {fileID: 1382201314}
   - {fileID: 1488971495}
   - {fileID: 482582721}
+  - {fileID: 463301049}
+  - {fileID: 1578864938}
   - {fileID: 2122494371}
   - {fileID: 1697178312}
   - {fileID: 449028674}
