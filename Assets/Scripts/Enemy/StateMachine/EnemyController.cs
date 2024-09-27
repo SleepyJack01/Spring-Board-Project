@@ -39,10 +39,14 @@ public class EnemyController : MonoBehaviour
     public Vector3 target;
     [HideInInspector]
     public Vector3 lastKnownPosition;
+    public bool seenByPlayer;
+    public float playerSeenTimer; 
 
     [Header("Attack Varibles")]
     public float attackRange = 1.5f;
+    public float attackDamage = 10.0f; 
     public LayerMask playerLayer;
+    public RoboManager playerRef;
 
     [Header("Animation Varibles")]
     private float xMovement;
@@ -76,9 +80,10 @@ public class EnemyController : MonoBehaviour
         {
             currentState.OnStateUpdate();
         }
-
         UpdateTarget();
         SetAnimatorSpeed();
+        UpdateSeenByPlayer(); 
+        
     }
 
     public void SetSpeed(float speed)
@@ -121,6 +126,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void UpdateSeenByPlayer()
+    {
+        seenByPlayer = playerRef.CanSeeEnemy();
+        if (seenByPlayer)
+        {
+            playerSeenTimer = playerSeenTimer - 4.0f * Time.deltaTime;
+        }
+        else
+            playerSeenTimer = 3.0f;
+    }
     public void GetNearestWaypoint()
     {
         float distance = Mathf.Infinity;

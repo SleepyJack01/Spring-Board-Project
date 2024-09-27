@@ -25,6 +25,11 @@ public class AlertState : EnemyState
 
     public override void OnStateUpdate()
     {
+        if (enemy.seenByPlayer && enemy.playerSeenTimer <= 0)
+        {
+            enemy.ChangeState(new FleeState(enemy));
+        }
+
         enemy.agent.SetDestination(enemy.lastKnownPosition);
 
         if (enemy.agent.remainingDistance <= 0.1f)
