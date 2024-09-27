@@ -750,7 +750,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6311
+  m_VersionIndex: 6314
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4624
+  m_VersionIndex: 4627
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1982,7 +1982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3315
+  m_VersionIndex: 3318
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7032
+  m_VersionIndex: 7035
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2736,7 +2736,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3216
+  m_VersionIndex: 3219
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8011
+  m_VersionIndex: 8014
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3968,7 +3968,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6416
+  m_VersionIndex: 6419
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7552
+  m_VersionIndex: 7555
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4722,7 +4722,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4272
+  m_VersionIndex: 4275
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5577,7 +5577,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5612
+  m_VersionIndex: 5615
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6465,7 +6465,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5627
+  m_VersionIndex: 5630
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7386,7 +7386,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4837
+  m_VersionIndex: 4840
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7763,7 +7763,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3682
+  m_VersionIndex: 3685
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8140,7 +8140,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3996
+  m_VersionIndex: 3999
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8517,7 +8517,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3374
+  m_VersionIndex: 3377
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8894,7 +8894,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4792
+  m_VersionIndex: 4795
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9749,7 +9749,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4085
+  m_VersionIndex: 4088
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10126,7 +10126,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4421
+  m_VersionIndex: 4424
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10981,7 +10981,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3489
+  m_VersionIndex: 3492
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11836,7 +11836,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8613
+  m_VersionIndex: 8616
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12691,7 +12691,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 15572
+  m_VersionIndex: 15575
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13068,7 +13068,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2701
+  m_VersionIndex: 2704
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13236,6 +13236,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorway
       objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13309,6 +13314,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364535093717747353, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 5330
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569135326808978430, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 3537
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13384,6 +13399,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8364535093717747353, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 5330
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569135326808978430, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 3537
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13457,6 +13482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Doorway (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13532,6 +13562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorway (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13605,6 +13640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Doorway (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13680,6 +13720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorway (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13753,6 +13798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Doorway (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13828,6 +13878,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doorway (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13901,6 +13956,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364535093717747353, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 5330
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569135326808978430, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 3537
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13976,6 +14041,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8364535093717747353, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 5330
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569135326808978430, guid: 4d753d9e11094bc4bb9d20dce1c21d41,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 3537
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14049,6 +14124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Doorway (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14127,7 +14207,7 @@ PrefabInstance:
     - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 4827
+      value: 4830
       objectReference: {fileID: 0}
     - target: {fileID: 7844279419951523800, guid: 39e1423f1756e8d45aa3cb34a07e355f,
         type: 3}
