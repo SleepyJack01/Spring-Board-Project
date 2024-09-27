@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private SceneChanger sceneChanger;
 
     [Header("First Selected Setup")]
     [SerializeField] private EventSystem eventSystem;
@@ -16,6 +17,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        sceneChanger = GetComponent<SceneChanger>();
         eventSystem = FindObjectOfType<EventSystem>();
         playerInput = FindObjectOfType<PlayerInput>();
     }
@@ -40,7 +42,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        sceneChanger.StartGame();
     }
 
     public void QuitGame()

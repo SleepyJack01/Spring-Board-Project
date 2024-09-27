@@ -17,6 +17,7 @@ public class RoboManager : MonoBehaviour
     [SerializeField] private BatteryBar batteryBar;
 
     [SerializeField] private float maxBattery = 100f;
+    [Range(0, 100)]
     [SerializeField] private float currentBattery;
     [SerializeField] private float batteryDecreaseRate = 0.1f;
 

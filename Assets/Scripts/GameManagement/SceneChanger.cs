@@ -9,6 +9,11 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] private Animator UIAnimator;
 
 
+    public void StartGame()
+    {
+        StartCoroutine(SceneChangeSequence("Game Level"));
+    }
+
     public void GameOver()
     {
         StartCoroutine(SceneChangeSequence("Game Over"));
