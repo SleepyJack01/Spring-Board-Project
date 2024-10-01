@@ -71,6 +71,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NightVison Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""1ae5aa2d-da8b-4594-9eb8-edd5e4f464a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +225,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Mouse Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17a14cea-6cfc-41d7-8022-59f0f7c0e0ec"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Mouse"",
+                    ""action"": ""NightVison Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db0230c7-8f0d-43cc-bf76-27b2b1b73a2e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""NightVison Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -257,6 +288,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
         m_PlayerActions_MenuButton = m_PlayerActions.FindAction("Menu Button", throwIfNotFound: true);
         m_PlayerActions_MouseInteraction = m_PlayerActions.FindAction("Mouse Interaction", throwIfNotFound: true);
+        m_PlayerActions_NightVisonButton = m_PlayerActions.FindAction("NightVison Button", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -323,6 +355,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Interact;
     private readonly InputAction m_PlayerActions_MenuButton;
     private readonly InputAction m_PlayerActions_MouseInteraction;
+    private readonly InputAction m_PlayerActions_NightVisonButton;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -332,6 +365,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
         public InputAction @MenuButton => m_Wrapper.m_PlayerActions_MenuButton;
         public InputAction @MouseInteraction => m_Wrapper.m_PlayerActions_MouseInteraction;
+        public InputAction @NightVisonButton => m_Wrapper.m_PlayerActions_NightVisonButton;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -356,6 +390,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseInteraction.started += instance.OnMouseInteraction;
             @MouseInteraction.performed += instance.OnMouseInteraction;
             @MouseInteraction.canceled += instance.OnMouseInteraction;
+            @NightVisonButton.started += instance.OnNightVisonButton;
+            @NightVisonButton.performed += instance.OnNightVisonButton;
+            @NightVisonButton.canceled += instance.OnNightVisonButton;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -375,6 +412,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseInteraction.started -= instance.OnMouseInteraction;
             @MouseInteraction.performed -= instance.OnMouseInteraction;
             @MouseInteraction.canceled -= instance.OnMouseInteraction;
+            @NightVisonButton.started -= instance.OnNightVisonButton;
+            @NightVisonButton.performed -= instance.OnNightVisonButton;
+            @NightVisonButton.canceled -= instance.OnNightVisonButton;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -417,5 +457,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnMenuButton(InputAction.CallbackContext context);
         void OnMouseInteraction(InputAction.CallbackContext context);
+        void OnNightVisonButton(InputAction.CallbackContext context);
     }
 }

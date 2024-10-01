@@ -62,7 +62,7 @@ public class BatteryBar : MonoBehaviour
             batteryLowText.color = new Color32(240, 209, 2, 255);
             batteryImage.sprite = batterySprites[4];
 
-            if (!flashing)
+            if (!flashing && !RoboManager.isRecharging)
             {
                 flashing = true;
                 flashCoroutine = StartCoroutine(FlashLowWarning());
