@@ -14,21 +14,40 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(roboCamera.transform.position, roboCamera.transform.forward, out hit, interactionDistance))
         {
-            if (hit.collider.CompareTag("Evidence"))
+            HandleRaycastHit(hit);
+        }
+        else
+        {
+            ClearDetectedObject();
+        }
+    }
+
+     private void HandleRaycastHit(RaycastHit hit)
+    {
+        if (hit.collider.CompareTag("Interactable"))
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                // Activate UI object on object
-                hit.collider.GetComponent<Evidence>().ActivateUI();
+                interactable.Highlight();
                 detectedObject = hit.collider.gameObject;
             }
-            else if (detectedObject != null)
-            {
-                detectedObject.GetComponent<Evidence>().DeactivateUI();
-                detectedObject = null;
-            }
         }
-        else if (detectedObject != null)
+        else
         {
-            detectedObject.GetComponent<Evidence>().DeactivateUI();
+            ClearDetectedObject();
+        }
+    }
+
+    private void ClearDetectedObject()
+    {
+        if (detectedObject != null)
+        {
+            IInteractable interactable = detectedObject.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Unhighlight();
+            }
             detectedObject = null;
         }
     }

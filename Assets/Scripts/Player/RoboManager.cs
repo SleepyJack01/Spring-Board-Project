@@ -91,10 +91,20 @@ public class RoboManager : MonoBehaviour
         switch (other.tag)
         {
             case "VanEnter":
-                StartCoroutine(FadeOut());
+                //StartCoroutine(FadeOut());
                 break;
             case "Charger":
                 isRecharging = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        switch (other.tag)
+        {
+            case "Charger":
+                isRecharging = false;
                 break;
         }
     }
@@ -128,6 +138,10 @@ public class RoboManager : MonoBehaviour
             if (profile.TryGet(out ColorAdjustments colorAdjustments))
             {
                 colorAdjustments.active = !colorAdjustments.active;
+            }
+            if (profile.TryGet(out ShadowsMidtonesHighlights shadowsMidtonesHighlights))
+            {
+                shadowsMidtonesHighlights.active = !shadowsMidtonesHighlights.active;
             }
         }
     }
