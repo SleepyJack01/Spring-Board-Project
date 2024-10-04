@@ -29,6 +29,7 @@ public class AlertState : EnemyState
 
         if (enemy.agent.remainingDistance <= 0.1f)
         {
+            enemy.animator.SetBool("Searching", true);
             time -= Time.deltaTime;
 
             if (delayRotationsTime <= 0.0f)
@@ -62,6 +63,7 @@ public class AlertState : EnemyState
 
     public override void OnStateExit()
     {
+        enemy.animator.SetBool("Searching", false);
         enemy.GetNearestWaypoint();
     }
 }
