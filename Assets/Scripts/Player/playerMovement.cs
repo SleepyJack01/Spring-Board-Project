@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     [SerializeField] private Transform headTransform;
     [SerializeField] private Transform cameraTransform;
-    // private Animator animator;
+    private Animator animator;
 
     [Header("Input Variables")]
     private Vector2 movementInput;
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Headbob Variables")]
     [SerializeField] private bool enableHeadbob = true;
+    [SerializeField] float headBobMovementRate = 5.5f;
+    [SerializeField] float headBobRotationRate = 11f;
     private float headBobIntensity = 0.15f;
     private Vector2 headBobVector = Vector2.zero;
     private float headBobIndex = 0.0f;
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     
     }
 
@@ -57,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         ApplyGravity();
         HandleMovement();
         HandleRotation();
-
+        HandleAnimations();
     }
 
     private void LateUpdate() 
@@ -93,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             if (isPlayerMoving)
             {
                 headBobCurrentIntensity = headBobIntensity;
-                headBobIndex += (characterController.velocity.magnitude * 2.5f) * Time.deltaTime;
+                headBobIndex += (characterController.velocity.magnitude * headBobMovementRate) * Time.deltaTime;
 
                 headBobVector.y = Mathf.Sin(headBobIndex);
                 headBobVector.x = Mathf.Sin(headBobIndex / 2);
@@ -103,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
             else if (isPlayerRotating )
             {
                 headBobCurrentIntensity = headBobIntensity;
-                headBobIndex += Time.deltaTime * 11f;
+                headBobIndex += Time.deltaTime * headBobRotationRate;
 
                 headBobVector.y = Mathf.Sin(headBobIndex);
                 headBobVector.x = Mathf.Sin(headBobIndex / 2);
@@ -142,6 +144,11 @@ public class PlayerMovement : MonoBehaviour
     private void HandleRotation()
     {
         transform.Rotate(Vector3.up * movementInput.x * rotationFactorPerFrame * Time.deltaTime);
+    }
+
+    private void HandleAnimations()
+    {
+        animator.SetFloat("Speed", movementInput.magnitude);
     }
 
 
