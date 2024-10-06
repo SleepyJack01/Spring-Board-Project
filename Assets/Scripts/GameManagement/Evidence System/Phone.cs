@@ -8,4 +8,14 @@ public class Phone : MonoBehaviour, IInteractable
     {
         Debug.Log("Phone");
     }
+
+    public void Highlight()
+    {
+        Debug.Log("Highlight Phone");
+    }
+
+    public void Unhighlight()
+    {
+        Debug.Log("Unhighlight Phone");
+    }
 }
