@@ -29,6 +29,8 @@ public class RoboManager : MonoBehaviour
     public static bool isRecharging = false;
     private bool textIsFlashing = false;
 
+    RaycastHit hit; 
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -84,6 +86,21 @@ public class RoboManager : MonoBehaviour
         currentBattery -= damage;
 
         batteryBar.SetBattery(currentBattery);
+    }
+
+    public bool CanSeeEnemy()
+    {
+        Physics.Raycast(playerMovement.GetTransform().position, playerMovement.GetTransform().forward, out hit);
+        if (hit.collider == null)
+        {
+            return false;
+        }
+        if (hit.collider.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy Seen");
+            return true;
+        }
+        return false;
     }
 
     private void OnTriggerEnter(Collider other) 

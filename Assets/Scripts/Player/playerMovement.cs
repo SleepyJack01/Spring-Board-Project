@@ -156,4 +156,9 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = context.ReadValue<Vector2>();
     }
+
+    public Transform GetTransform()
+    {
+        return headTransform; 
+    }
 }

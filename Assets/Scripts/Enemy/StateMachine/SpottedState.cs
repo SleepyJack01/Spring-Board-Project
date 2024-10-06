@@ -17,6 +17,11 @@ public class SpottedState : EnemyState
 
     public override void OnStateUpdate()
     {
+        if (enemy.seenByPlayer && enemy.playerSeenTimer <= 0)
+        {
+            enemy.ChangeState(new FleeState(enemy));
+        }
+
         time -= Time.deltaTime;
         
         Vector3 direction = enemy.target+ - enemy.transform.position;

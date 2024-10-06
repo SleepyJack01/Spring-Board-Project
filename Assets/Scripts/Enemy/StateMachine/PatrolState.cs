@@ -18,6 +18,10 @@ public class PatrolState : EnemyState
 
     public override void OnStateUpdate()
     {
+        if (enemy.seenByPlayer && enemy.playerSeenTimer <= 0)
+        {
+            enemy.ChangeState(new FleeState(enemy));
+        }
         // Change the waypoint to a random one after a certain random number of waypoints
         if (randomDirectionIndex >= randomMax)
         {

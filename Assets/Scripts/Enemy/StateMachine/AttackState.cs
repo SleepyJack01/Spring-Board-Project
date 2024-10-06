@@ -25,6 +25,7 @@ public class AttackState : EnemyState
             if (hit.collider.CompareTag("Player"))
             {
                 playerIsHit = true;
+                enemy.playerRef.RobotHit(enemy.attackDamage);
             }
             else
             {
