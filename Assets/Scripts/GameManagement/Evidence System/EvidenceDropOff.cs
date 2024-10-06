@@ -9,7 +9,7 @@ public class EvidenceDropOff : MonoBehaviour
     public Inventory inventory;
     [SerializeField] private int pointsToWin = 10;
     private int totalPoints = 0;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    //[SerializeField] private TextMeshProUGUI scoreText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +29,7 @@ public class EvidenceDropOff : MonoBehaviour
 
             if (Inventory.instance.evidenceInventory.Count == 0)
             {
-                scoreText.text = "You have no evidence to deposit!";
+                //scoreText.text = "You have no evidence to deposit!";
                 return;
             }
 
@@ -60,12 +60,12 @@ public class EvidenceDropOff : MonoBehaviour
         Debug.Log("Total points: " + totalPoints);
         if (totalPoints >= pointsToWin)
         {
-            scoreText.text = "You have won!";
+            //scoreText.text = "You have won!";
             sceneChanger.Victory();
         }
         else
         {
-            scoreText.text = "You need " + (pointsToWin - totalPoints) + " more points to win!";
+            //scoreText.text = "You need " + (pointsToWin - totalPoints) + " more points to win!";
         }
     }
 }
