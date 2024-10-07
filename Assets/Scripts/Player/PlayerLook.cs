@@ -7,6 +7,7 @@ public class PlayerLook : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private Camera playerCamera;
 
     [Header("Settings")]
     [Range(0.01f, 0.2f)]
@@ -81,7 +82,8 @@ public class PlayerLook : MonoBehaviour
         yRotation += lookX;
         yRotation = Mathf.Clamp(yRotation, -maxHorizontalLookAngle, maxHorizontalLookAngle);
         
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
 
