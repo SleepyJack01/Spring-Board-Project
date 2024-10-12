@@ -10,9 +10,10 @@ public class RoboManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private SceneChanger sceneChanger;
     [SerializeField] private Volume volume;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip hitSound;
 
     [Header("Trigger Settings")]
-    [SerializeField] private CharacterController controller;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private IngameUI ingameUI;
     [SerializeField] private Transform chargerPos;
@@ -33,8 +34,8 @@ public class RoboManager : MonoBehaviour
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
         playerMovement = GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
 
         currentBattery = maxBattery;
         batteryBar.SetBattery(currentBattery);
@@ -86,30 +87,29 @@ public class RoboManager : MonoBehaviour
         currentBattery -= damage;
 
         batteryBar.SetBattery(currentBattery);
+
+        audioSource.PlayOneShot(hitSound);
     }
 
-    public bool CanSeeEnemy()
-    {
-        Physics.Raycast(playerMovement.GetTransform().position, playerMovement.GetTransform().forward, out hit);
-        if (hit.collider == null)
-        {
-            return false;
-        }
-        if (hit.collider.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Enemy Seen");
-            return true;
-        }
-        return false;
-    }
+    // public bool CanSeeEnemy()
+    // {
+    //     Physics.Raycast(transform.position, transform.forward, out hit);
+    //     if (hit.collider == null)
+    //     {
+    //         return false;
+    //     }
+    //     if (hit.collider.gameObject.CompareTag("Enemy"))
+    //     {
+    //         //Debug.Log("Enemy Seen");
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     private void OnTriggerEnter(Collider other) 
     {
         switch (other.tag)
         {
-            case "VanEnter":
-                //StartCoroutine(FadeOut());
-                break;
             case "Charger":
                 isRecharging = true;
                 break;
@@ -134,17 +134,6 @@ public class RoboManager : MonoBehaviour
         rechargeText.enabled = false;
         yield return new WaitForSeconds(0.5f);
         textIsFlashing = false;
-    }
-
-    private IEnumerator FadeOut()
-    {
-        playerMovement.enabled = false;
-        controller.enabled = false;
-
-        yield return new WaitForSeconds(1.8f);
-        
-        transform.position = chargerPos.position;
-        transform.rotation = chargerPos.rotation;
     }
 
     public void OnNightVision(InputAction.CallbackContext context)

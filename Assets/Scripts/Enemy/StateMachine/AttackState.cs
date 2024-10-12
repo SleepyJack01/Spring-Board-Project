@@ -10,16 +10,42 @@ public class AttackState : EnemyState
 
     public override void OnStateEnter()
     {
-        Vector3 direction = enemy.target+ - enemy.transform.position;
+        RotateTowardsPlayer();
+        FireRaycastAtPlayer();
+    }
+
+    public override void OnStateUpdate()
+    {
+        RotateTowardsPlayer();
+        FireRaycastAtPlayer();
+        if (playerIsHit)
+        {
+            Debug.Log("Player is hit");
+            enemy.ChangeState(new FleeState(enemy));
+        }
+        else
+        {
+            Debug.Log("Player is not hit");
+            enemy.ChangeState(new ChaseState(enemy));
+        }
+    }
+
+    void RotateTowardsPlayer()
+    {
+        Vector3 direction = enemy.target - enemy.transform.position;
         Quaternion LookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0.0f, direction.z));
         enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, LookRotation, Time.deltaTime * 5f);
+    }
 
-        //fires a raycast at the player
+    void FireRaycastAtPlayer()
+    {
         RaycastHit hit;
-        Vector3 playerDirection = (enemy.target - enemy.transform.position).normalized;
-        if (Physics.Raycast(enemy.transform.position, playerDirection, out hit, enemy.attackRange, enemy.playerLayer))
+
+        Vector3 playerDirection = new Vector3(enemy.target.x - enemy.transform.position.x, 0, enemy.target.z - enemy.transform.position.z).normalized;
+
+        if (Physics.Raycast(enemy.transform.position + Vector3.up * 0.5f, playerDirection, out hit, enemy.attackRange, enemy.playerLayer))
         {
-            Debug.DrawRay(enemy.transform.position, direction * hit.distance, Color.red);
+            Debug.DrawRay(enemy.transform.position + Vector3.up * 0.5f, playerDirection * hit.distance, Color.red);
             Debug.Log("Raycast hit: " + hit.collider.name);
 
             if (hit.collider.CompareTag("Player"))
@@ -32,18 +58,9 @@ public class AttackState : EnemyState
                 playerIsHit = false;
             }
         }
-    }
-
-    public override void OnStateUpdate()
-    {
-        if (playerIsHit)
-        {
-            Debug.Log("Player is hit");
-            enemy.ChangeState(new FleeState(enemy));
-        }
         else
         {
-            enemy.ChangeState(new ChaseState(enemy));
+            Debug.Log("Raycast missed.");
         }
     }
 

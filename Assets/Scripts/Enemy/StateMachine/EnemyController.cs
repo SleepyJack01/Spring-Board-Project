@@ -82,7 +82,7 @@ public class EnemyController : MonoBehaviour
         }
         UpdateTarget();
         SetAnimatorSpeed();
-        UpdateSeenByPlayer(); 
+        //UpdateSeenByPlayer(); 
         
     }
 
@@ -126,16 +126,17 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void UpdateSeenByPlayer()
-    {
-        seenByPlayer = playerRef.CanSeeEnemy();
-        if (seenByPlayer)
-        {
-            playerSeenTimer = playerSeenTimer - 4.0f * Time.deltaTime;
-        }
-        else
-            playerSeenTimer = 3.0f;
-    }
+    // private void UpdateSeenByPlayer()
+    // {
+    //     seenByPlayer = playerRef.CanSeeEnemy();
+    //     if (seenByPlayer)
+    //     {
+    //         playerSeenTimer = playerSeenTimer - 4.0f * Time.deltaTime;
+    //     }
+    //     else
+    //         playerSeenTimer = 3.0f;
+    // }
+
     public void GetNearestWaypoint()
     {
         float distance = Mathf.Infinity;
