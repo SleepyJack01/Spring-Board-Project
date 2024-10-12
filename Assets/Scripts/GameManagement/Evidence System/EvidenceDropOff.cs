@@ -12,7 +12,7 @@ public class EvidenceDropOff : MonoBehaviour
     private int totalPoints = 0;
     private AudioSource audioSource;
     [SerializeField] private AudioClip depositSound;
-    //[SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI evidenceText;
 
     private void Start()
     {
@@ -23,21 +23,9 @@ public class EvidenceDropOff : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Inventory.instance == null)
-            {
-                Debug.LogError("Inventory.instance is null");
-                return;
-            }
-
-            if (Inventory.instance.evidenceInventory == null)
-            {
-                Debug.LogError("Inventory.instance.evidenceInventory is null");
-                return;
-            }
-
             if (Inventory.instance.evidenceInventory.Count == 0)
             {
-                //scoreText.text = "You have no evidence to deposit!";
+                evidenceText.text = "I should find some more evidence.";
                 return;
             }
 
@@ -64,6 +52,14 @@ public class EvidenceDropOff : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            evidenceText.text = "";
+        }
+    }
+
     // private void OnTriggerStay(Collider other)
     // {
     //     if (other.CompareTag("Player"))
@@ -84,7 +80,7 @@ public class EvidenceDropOff : MonoBehaviour
         }
         else
         {
-            //scoreText.text = "You need " + (pointsToWin - totalPoints) + " more points to win!";
+            evidenceText.text = "I need more evidence.";
             // switch (totalPoints)
             // {
             //     case 0:
